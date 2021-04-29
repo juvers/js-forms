@@ -9,7 +9,7 @@ export default function App() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-
+  const data = watch("example");
   console.log(watch("example")); // watch input value by passing the name of it
 
   return (
@@ -24,6 +24,8 @@ export default function App() {
       {errors.exampleRequired && <span>This field is required</span>}
 
       <input type="submit" />
+
+      <p>{JSON.stringify(data)}</p>
     </form>
   );
 }
